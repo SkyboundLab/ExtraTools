@@ -36,12 +36,12 @@ public class CobblestoneGenerator extends SimpleSlimefunItem<BlockTicker> implem
 
     public CobblestoneGenerator() {
         super(ETItems.extra_tools, ETItems.COBBLESTONE_GENERATOR, RecipeType.ENHANCED_CRAFTING_TABLE,
-            new ItemStack[] {SlimefunItems.PROGRAMMABLE_ANDROID_MINER, SlimefunItems.MAGNESIUM_INGOT,
-                SlimefunItems.PROGRAMMABLE_ANDROID_MINER,
+            new ItemStack[] {SlimefunItems.ANDROID_MEMORY_CORE, SlimefunItems.MAGNESIUM_INGOT,
+                SlimefunItems.ANDROID_MEMORY_CORE,
                 new ItemStack(Material.WATER_BUCKET), SlimefunItems.BLISTERING_INGOT_3,
                 new ItemStack(Material.LAVA_BUCKET),
-                SlimefunItems.PROGRAMMABLE_ANDROID_MINER, SlimefunItems.BIG_CAPACITOR,
-                SlimefunItems.PROGRAMMABLE_ANDROID_MINER});
+                SlimefunItems.ANDROID_MEMORY_CORE, SlimefunItems.BIG_CAPACITOR,
+                SlimefunItems.ANDROID_MEMORY_CORE});
 
         createPreset(this, this::constructMenu);
         
