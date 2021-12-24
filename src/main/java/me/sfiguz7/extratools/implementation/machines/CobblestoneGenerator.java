@@ -29,23 +29,23 @@ import java.util.List;
 
 
 public class CobblestoneGenerator extends SimpleSlimefunItem<BlockTicker> implements ETInventoryBlock,
-    EnergyNetComponent {
+        EnergyNetComponent {
 
     private static final int ENERGY_CONSUMPTION = 32;
     private final int[] border = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 18, 19, 20, 21, 22, 27, 28, 29, 30,
-        31, 36, 37, 38, 39, 40, 41, 42, 43, 44, 22};
+            31, 36, 37, 38, 39, 40, 41, 42, 43, 44, 22};
     private final int[] inputBorder = {};
     private final int[] outputBorder = {14, 15, 16, 17, 23, 26, 32, 33, 34, 35};
     private int decrement = 2;
 
     public CobblestoneGenerator() {
         super(ETItems.extra_tools, ETItems.COBBLESTONE_GENERATOR, RecipeType.ENHANCED_CRAFTING_TABLE,
-            new ItemStack[] {SlimefunItems.ANDROID_MEMORY_CORE, SlimefunItems.MAGNESIUM_INGOT,
-                SlimefunItems.ANDROID_MEMORY_CORE,
-                new ItemStack(Material.WATER_BUCKET), SlimefunItems.BLISTERING_INGOT_3,
-                new ItemStack(Material.LAVA_BUCKET),
-                SlimefunItems.ANDROID_MEMORY_CORE, SlimefunItems.BIG_CAPACITOR,
-                SlimefunItems.ANDROID_MEMORY_CORE});
+                new ItemStack[] {SlimefunItems.ANDROID_MEMORY_CORE, SlimefunItems.REINFORCED_PLATE,
+                        SlimefunItems.ANDROID_MEMORY_CORE,
+                        new ItemStack(Material.WATER_BUCKET), SlimefunItems.BLISTERING_INGOT_3,
+                        new ItemStack(Material.LAVA_BUCKET),
+                        SlimefunItems.ANDROID_MEMORY_CORE, SlimefunItems.BIG_CAPACITOR,
+                        SlimefunItems.ANDROID_MEMORY_CORE});
 
         createPreset(this, this::constructMenu);
 
@@ -55,15 +55,15 @@ public class CobblestoneGenerator extends SimpleSlimefunItem<BlockTicker> implem
     private void constructMenu(BlockMenuPreset preset) {
         for (int i : border) {
             preset.addItem(i, new CustomItemStack(new ItemStack(Material.GRAY_STAINED_GLASS_PANE), " "),
-                ChestMenuUtils.getEmptyClickHandler());
+                    ChestMenuUtils.getEmptyClickHandler());
         }
         for (int i : inputBorder) {
             preset.addItem(i, new CustomItemStack(new ItemStack(Material.CYAN_STAINED_GLASS_PANE), " "),
-                ChestMenuUtils.getEmptyClickHandler());
+                    ChestMenuUtils.getEmptyClickHandler());
         }
         for (int i : outputBorder) {
             preset.addItem(i, new CustomItemStack(new ItemStack(Material.ORANGE_STAINED_GLASS_PANE), " "),
-                ChestMenuUtils.getEmptyClickHandler());
+                    ChestMenuUtils.getEmptyClickHandler());
         }
 
         for (int i : getOutputSlots()) {
@@ -167,4 +167,3 @@ public class CobblestoneGenerator extends SimpleSlimefunItem<BlockTicker> implem
     }
 
 }
-
